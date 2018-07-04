@@ -5,6 +5,7 @@ spring:
     name: andlinks-cloud-comsumer-user
 
 
+
 logging:                                # 配置日志级别，让hibernate打印出执行的SQL
   level:
     root: INFO

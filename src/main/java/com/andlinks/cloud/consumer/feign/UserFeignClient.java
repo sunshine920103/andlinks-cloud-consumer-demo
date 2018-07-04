@@ -8,7 +8,7 @@ import java.util.Map;
 
 @FeignClient(name = "andlinks-cloud-provider-user")
 public interface UserFeignClient {
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
     public User findById(@PathVariable("id") Long id);
 
     @GetMapping("/getUser")
