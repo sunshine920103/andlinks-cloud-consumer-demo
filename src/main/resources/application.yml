@@ -1,0 +1,21 @@
+server:
+  port: 8101
+spring:
+  application:
+    name: andlinks-cloud-comsumer-user
+
+
+logging:                                # 配置日志级别，让hibernate打印出执行的SQL
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.20.107:8761/eureka/
+  instance:
+    prefer-ip-address: true
