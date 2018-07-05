@@ -17,6 +17,18 @@ logging:                                # 配置日志级别，让hibernate打�
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://192.168.20.107:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
+
+feign:
+  hystrix:
+    enabled: true            #feign.hystrix.enabled=true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
