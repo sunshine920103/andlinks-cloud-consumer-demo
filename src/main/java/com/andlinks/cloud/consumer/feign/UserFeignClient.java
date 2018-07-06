@@ -1,5 +1,6 @@
 package com.andlinks.cloud.consumer.feign;
 
+import com.andlinks.cloud.consumer.config.FeignDisableHystrixConfiguration;
 import com.andlinks.cloud.consumer.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
@@ -7,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-@FeignClient(name = "andlinks-cloud-provider-user", fallbackFactory = UserFeignClientFallbackFactory.class)
+//@FeignClient(name = "andlinks-cloud-provider-user",configuration = FeignDisableHystrixConfiguration.class,fallbackFactory = UserFeignClientFallbackFactory.class)
+@FeignClient(name = "andlinks-cloud-provider-user",fallbackFactory = UserFeignClientFallbackFactory.class)
 public interface UserFeignClient {
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
     public User findById(@PathVariable("id") Long id);

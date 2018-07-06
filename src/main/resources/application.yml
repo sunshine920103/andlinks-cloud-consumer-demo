@@ -31,4 +31,5 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "*"         #配置actuator的endpoints默认都开放访问
+
